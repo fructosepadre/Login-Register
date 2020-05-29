@@ -4,10 +4,12 @@ import com.example.LogInSignUpWeb.dto.LogInDTO;
 import com.example.LogInSignUpWeb.dto.SignUpDTO;
 import com.example.LogInSignUpWeb.service.LogInInterface;
 import com.example.LogInSignUpWeb.service.SignUpInterface;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Slf4j
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/75percent/web")
 public class Auth {
@@ -25,7 +27,6 @@ public class Auth {
 
     @PostMapping(value = "/login")
     private String logIn(@RequestBody LogInDTO logInDTO){
-        System.out.println(logInInterface.checkForLogIn(logInDTO));
         return logInInterface.checkForLogIn(logInDTO);
     }
 
